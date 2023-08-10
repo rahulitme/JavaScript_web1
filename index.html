@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 100px;
+          
+            position: relative; /* Add this to make positioning easier */
+        }
+
+        /* Hide the image by default */
+        .container img {
+            display: none;
+        }
+
+        /* Style for the popup */
+        .popup {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Make the popup visible */
+        .open-popup {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="image" src="charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" onclick="hideImage()">
+        <button type="button" class="btn" onclick="openPopup()">Submit</button>
+    </div>
+
+    <div id="popup" class="popup">
+        This is a popup content. <button type="button" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function hideImage() {
+            var image = document.getElementById("image");
+            image.style.display = "none";
+        }
+
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+</html>
